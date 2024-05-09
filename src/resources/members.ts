@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'booklet/core';
-import { APIResource } from 'booklet/resource';
-import { isRequestOptions } from 'booklet/core';
-import * as MembersAPI from 'booklet/resources/members';
+import * as Core from 'bklt/core';
+import { APIResource } from 'bklt/resource';
+import { isRequestOptions } from 'bklt/core';
+import * as MembersAPI from 'bklt/resources/members';
 
 export class Members extends APIResource {
   /**

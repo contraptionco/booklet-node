@@ -55,12 +55,12 @@ cd booklet-node
 # With yarn
 yarn link
 cd ../my-package
-yarn link booklet
+yarn link bklt
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global booklet
+pnpm link -—global bklt
 ```
 
 ## Running tests

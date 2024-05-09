@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'booklet/shims/node'
- *   import 'booklet/shims/web'
+ *   import 'bklt/shims/node'
+ *   import 'bklt/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */
