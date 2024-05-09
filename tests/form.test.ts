@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'booklet/core';
-import { Blob } from 'booklet/_shims/index';
-import { toFile } from 'booklet';
+import { multipartFormRequestOptions, createForm } from 'bklt/core';
+import { Blob } from 'bklt/_shims/index';
+import { toFile } from 'bklt';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Booklet from 'booklet';
-import { APIUserAbortError } from 'booklet';
-import { Headers } from 'booklet/core';
+import Booklet from 'bklt';
+import { APIUserAbortError } from 'bklt';
+import { Headers } from 'bklt/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

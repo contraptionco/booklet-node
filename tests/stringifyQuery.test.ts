@@ -1,4 +1,4 @@
-import { APIClient } from 'booklet/core';
+import { APIClient } from 'bklt/core';
 
 const { stringifyQuery } = APIClient.prototype as any;
 
