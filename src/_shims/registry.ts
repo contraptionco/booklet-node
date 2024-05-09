@@ -42,13 +42,11 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'booklet/shims/${shims.kind}'\` before importing anything else from booklet`,
+      `you must \`import 'bklt/shims/${shims.kind}'\` before importing anything else from bklt`,
     );
   }
   if (kind) {
-    throw new Error(
-      `can't \`import 'booklet/shims/${shims.kind}'\` after \`import 'booklet/shims/${kind}'\``,
-    );
+    throw new Error(`can't \`import 'bklt/shims/${shims.kind}'\` after \`import 'bklt/shims/${kind}'\``);
   }
   auto = options.auto;
   kind = shims.kind;

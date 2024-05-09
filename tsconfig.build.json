@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "booklet/*": ["dist/src/*"],
-      "booklet": ["dist/src/index.ts"],
+      "bklt/*": ["dist/src/*"],
+      "bklt": ["dist/src/index.ts"],
     },
     "noEmit": false,
     "declaration": true,

@@ -1,5 +1,5 @@
 {
-  "name": "booklet",
+  "name": "bklt",
   "version": "0.0.1-alpha.0",
   "description": "The official TypeScript library for the Booklet API",
   "author": "Booklet <dev-feedback@booklet.com>",
@@ -61,8 +61,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "booklet": ".",
-    "booklet/*": "./src/*"
+    "bklt": ".",
+    "bklt/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

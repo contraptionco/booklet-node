@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "booklet/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "booklet/*": ["src/*"],
-      "booklet": ["src/index.ts"],
+      "bklt/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "bklt/*": ["src/*"],
+      "bklt": ["src/index.ts"],
     },
     "noEmit": true,
 

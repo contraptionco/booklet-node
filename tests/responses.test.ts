@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'booklet/core';
-import { Headers } from 'booklet/_shims/index';
+import { createResponseHeaders } from 'bklt/core';
+import { Headers } from 'bklt/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters
