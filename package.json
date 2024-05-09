@@ -1,6 +1,6 @@
 {
   "name": "booklet",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha",
   "description": "The official TypeScript library for the Booklet API",
   "author": "Booklet <dev-feedback@booklet.com>",
   "types": "dist/index.d.ts",
