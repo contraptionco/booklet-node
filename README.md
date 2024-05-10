@@ -4,7 +4,7 @@
 
 This library provides convenient access to the Booklet REST API from server-side TypeScript or JavaScript.
 
-The REST API documentation can be found [on docs.booklet.com](https://docs.booklet.com). The full API of this library can be found in [api.md](api.md).
+The REST API documentation can be found [on docs.booklet.group](https://docs.booklet.group). The full API of this library can be found in [api.md](api.md).
 
 It is generated with [Stainless](https://www.stainlessapi.com/).
 
