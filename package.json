@@ -1,8 +1,8 @@
 {
   "name": "bklt",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "description": "The official TypeScript library for the Booklet API",
-  "author": "Booklet <dev-feedback@booklet.com>",
+  "author": "Booklet <booklet@contraption.co>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
