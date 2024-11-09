@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'bklt/core';
-import { APIResource } from 'bklt/resource';
-import { isRequestOptions } from 'bklt/core';
-import * as MembersAPI from 'bklt/resources/members';
+import { APIResource } from '../resource';
+import { isRequestOptions } from '../core';
+import * as Core from '../core';
 
 export class Members extends APIResource {
   /**
@@ -170,10 +169,12 @@ export interface MemberListParams {
   page?: number;
 }
 
-export namespace Members {
-  export import MemberRetrieveResponse = MembersAPI.MemberRetrieveResponse;
-  export import MemberListResponse = MembersAPI.MemberListResponse;
-  export import MemberCreateParams = MembersAPI.MemberCreateParams;
-  export import MemberUpdateParams = MembersAPI.MemberUpdateParams;
-  export import MemberListParams = MembersAPI.MemberListParams;
+export declare namespace Members {
+  export {
+    type MemberRetrieveResponse as MemberRetrieveResponse,
+    type MemberListResponse as MemberListResponse,
+    type MemberCreateParams as MemberCreateParams,
+    type MemberUpdateParams as MemberUpdateParams,
+    type MemberListParams as MemberListParams,
+  };
 }
