@@ -1,10 +1,18 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { type Agent } from './_shims/index';
 import * as Core from './core';
 import * as Errors from './error';
-import { type Agent } from './_shims/index';
 import * as Uploads from './uploads';
-import * as API from 'bklt/resources/index';
+import * as API from './resources/index';
+import {
+  MemberCreateParams,
+  MemberListParams,
+  MemberListResponse,
+  MemberRetrieveResponse,
+  MemberUpdateParams,
+  Members,
+} from './resources/members';
 
 export interface ClientOptions {
   /**
@@ -69,7 +77,9 @@ export interface ClientOptions {
   defaultQuery?: Core.DefaultQuery;
 }
 
-/** API Client for interfacing with the Booklet API. */
+/**
+ * API Client for interfacing with the Booklet API.
+ */
 export class Booklet extends Core.APIClient {
   apiKey: string;
 
@@ -111,6 +121,7 @@ export class Booklet extends Core.APIClient {
       maxRetries: options.maxRetries,
       fetch: options.fetch,
     });
+
     this._options = options;
 
     this.apiKey = apiKey;
@@ -134,6 +145,7 @@ export class Booklet extends Core.APIClient {
   }
 
   static Booklet = this;
+  static DEFAULT_TIMEOUT = 60000; // 1 minute
 
   static BookletError = Errors.BookletError;
   static APIError = Errors.APIError;
@@ -153,7 +165,7 @@ export class Booklet extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
-export const {
+export {
   BookletError,
   APIError,
   APIConnectionError,
@@ -167,20 +179,24 @@ export const {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} = Errors;
+} from './error';
 
 export import toFile = Uploads.toFile;
 export import fileFromPath = Uploads.fileFromPath;
 
-export namespace Booklet {
-  export import RequestOptions = Core.RequestOptions;
+Booklet.Members = Members;
 
-  export import Members = API.Members;
-  export import MemberRetrieveResponse = API.MemberRetrieveResponse;
-  export import MemberListResponse = API.MemberListResponse;
-  export import MemberCreateParams = API.MemberCreateParams;
-  export import MemberUpdateParams = API.MemberUpdateParams;
-  export import MemberListParams = API.MemberListParams;
+export declare namespace Booklet {
+  export type RequestOptions = Core.RequestOptions;
+
+  export {
+    Members as Members,
+    type MemberRetrieveResponse as MemberRetrieveResponse,
+    type MemberListResponse as MemberListResponse,
+    type MemberCreateParams as MemberCreateParams,
+    type MemberUpdateParams as MemberUpdateParams,
+    type MemberListParams as MemberListParams,
+  };
 }
 
 export default Booklet;
