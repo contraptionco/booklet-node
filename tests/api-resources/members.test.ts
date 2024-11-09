@@ -3,14 +3,14 @@
 import Booklet from 'bklt';
 import { Response } from 'node-fetch';
 
-const booklet = new Booklet({
+const client = new Booklet({
   apiKey: 'My API Key',
   baseURL: process.env['TEST_API_BASE_URL'] ?? 'http://127.0.0.1:4010',
 });
 
 describe('resource members', () => {
   test('create: only required params', async () => {
-    const responsePromise = booklet.members.create({ email: 'string' });
+    const responsePromise = client.members.create({ email: 'email' });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -21,20 +21,20 @@ describe('resource members', () => {
   });
 
   test('create: required and optional params', async () => {
-    const response = await booklet.members.create({
-      email: 'string',
-      about: 'string',
-      name: 'string',
-      permission: 'string',
-      photo: 'string',
-      quarantined_at: 'string',
+    const response = await client.members.create({
+      email: 'email',
+      about: 'about',
+      name: 'name',
+      permission: 'permission',
+      photo: 'photo',
+      quarantined_at: 'quarantined_at',
       send_welcome: true,
       subscribed_at: true,
     });
   });
 
   test('retrieve', async () => {
-    const responsePromise = booklet.members.retrieve('string');
+    const responsePromise = client.members.retrieve('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -46,13 +46,13 @@ describe('resource members', () => {
 
   test('retrieve: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(booklet.members.retrieve('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.members.retrieve('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Booklet.NotFoundError,
     );
   });
 
   test('update', async () => {
-    const responsePromise = booklet.members.update('string');
+    const responsePromise = client.members.update('id');
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -64,7 +64,7 @@ describe('resource members', () => {
 
   test('update: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(booklet.members.update('string', { path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.members.update('id', { path: '/_stainless_unknown_path' })).rejects.toThrow(
       Booklet.NotFoundError,
     );
   });
@@ -72,16 +72,22 @@ describe('resource members', () => {
   test('update: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      booklet.members.update(
-        'string',
-        { about: 'string', locked_at: 'string', name: 'string', photo: 'string', quarantined_at: 'string' },
+      client.members.update(
+        'id',
+        {
+          about: 'about',
+          locked_at: 'locked_at',
+          name: 'name',
+          photo: 'photo',
+          quarantined_at: 'quarantined_at',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Booklet.NotFoundError);
   });
 
   test('list', async () => {
-    const responsePromise = booklet.members.list();
+    const responsePromise = client.members.list();
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
     const response = await responsePromise;
@@ -93,7 +99,7 @@ describe('resource members', () => {
 
   test('list: request options instead of params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
-    await expect(booklet.members.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
+    await expect(client.members.list({ path: '/_stainless_unknown_path' })).rejects.toThrow(
       Booklet.NotFoundError,
     );
   });
@@ -101,7 +107,7 @@ describe('resource members', () => {
   test('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
-      booklet.members.list({ items: 0, page: 0 }, { path: '/_stainless_unknown_path' }),
+      client.members.list({ items: 0, page: 0 }, { path: '/_stainless_unknown_path' }),
     ).rejects.toThrow(Booklet.NotFoundError);
   });
 });
