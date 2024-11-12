@@ -165,6 +165,21 @@ export class Booklet extends Core.APIClient {
   static fileFromPath = Uploads.fileFromPath;
 }
 
+Booklet.Members = Members;
+export declare namespace Booklet {
+  export type RequestOptions = Core.RequestOptions;
+
+  export {
+    Members as Members,
+    type MemberRetrieveResponse as MemberRetrieveResponse,
+    type MemberListResponse as MemberListResponse,
+    type MemberCreateParams as MemberCreateParams,
+    type MemberUpdateParams as MemberUpdateParams,
+    type MemberListParams as MemberListParams,
+  };
+}
+
+export { toFile, fileFromPath } from 'bklt/uploads';
 export {
   BookletError,
   APIError,
@@ -179,24 +194,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from './error';
-
-export import toFile = Uploads.toFile;
-export import fileFromPath = Uploads.fileFromPath;
-
-Booklet.Members = Members;
-
-export declare namespace Booklet {
-  export type RequestOptions = Core.RequestOptions;
-
-  export {
-    Members as Members,
-    type MemberRetrieveResponse as MemberRetrieveResponse,
-    type MemberListResponse as MemberListResponse,
-    type MemberCreateParams as MemberCreateParams,
-    type MemberUpdateParams as MemberUpdateParams,
-    type MemberListParams as MemberListParams,
-  };
-}
+} from 'bklt/error';
 
 export default Booklet;
