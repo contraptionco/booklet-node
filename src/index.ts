@@ -179,7 +179,7 @@ export declare namespace Booklet {
   };
 }
 
-export { toFile, fileFromPath } from 'bklt/uploads';
+export { toFile, fileFromPath } from './uploads';
 export {
   BookletError,
   APIError,
@@ -194,6 +194,6 @@ export {
   InternalServerError,
   PermissionDeniedError,
   UnprocessableEntityError,
-} from 'bklt/error';
+} from './error';
 
 export default Booklet;
